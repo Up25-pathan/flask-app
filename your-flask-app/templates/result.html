@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    {% if report %}
+        <h2>Scan ID: {{ report.scan_id }}</h2>
+        <p>Response Code: {{ report.response_code }}</p>
+        <p>Scan Date: {{ report.scan_date }}</p>
+        <p>Positives: {{ report.positives }}</p>
+        <p>Total: {{ report.total }}</p>
+        <p>Permalink: <a href="{{ report.permalink }}">View Full Report</a></p>
+    {% else %}
+        <p>No report available.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>
